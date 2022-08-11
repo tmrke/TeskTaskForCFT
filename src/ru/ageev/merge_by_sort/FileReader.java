@@ -7,25 +7,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileReader {
-    private List<String> strings;
+    private List<String> lines;
 
     public FileReader(String path) {
-        strings = new ArrayList<>();
-        strings = getStringsListFromFile(path);
+        lines = new ArrayList<>();
+        lines = getStringsListFromFile(path);
     }
 
     public String[] getStringsArray() {
-        String[] stringsArray = new String[strings.size()];
+        String[] stringsArray = new String[lines.size()];
 
         for (int i = 0; i < stringsArray.length; ++i) {
-            stringsArray[i] = strings.get(i);
+            stringsArray[i] = lines.get(i);
         }
 
         return stringsArray;
     }
 
     public List<String> getDataList() {
-        return List.copyOf(strings);
+        return List.copyOf(lines);
     }
 
     public List<String> getStringsListFromFile(String path) {
@@ -34,13 +34,13 @@ public class FileReader {
                 String currentLine = scanner.nextLine();
 
                 if (!currentLine.contains(" ")) {
-                    strings.add(currentLine);
+                    lines.add(currentLine);
                 }
             }
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
 
-        return strings;
+        return lines;
     }
 }
