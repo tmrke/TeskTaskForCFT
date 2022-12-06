@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TeskTaskForCFT:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TeskTaskForCFT_jar</output-path>
+    <root id="archive" name="TeskTaskForCFT.jar">
+      <element id="module-output" name="TeskTaskForCFT" />
+    </root>
+  </artifact>
+</component>
