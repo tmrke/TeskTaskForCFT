@@ -9,7 +9,7 @@ public class Writer {
     private final FileOutputStream fileOutputStream;
 
     public Writer(String outputFileName) throws IOException {
-        File outputFile = new File("src/ru/ageev/resources/" + outputFileName);
+        File outputFile = new File("src/main/resources/" + outputFileName);
         fileOutputStream = new FileOutputStream(outputFile, false);
     }
 

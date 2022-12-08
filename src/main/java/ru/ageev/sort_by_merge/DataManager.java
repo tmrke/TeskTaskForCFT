@@ -57,12 +57,10 @@ public class DataManager {
             writer.writeToFile(Sort.getAscSortNumbersArray(reader.getNumbersArrayFromFile(inputFilesNames)));
         } else if (sortMode == SortMode.DESCENDING && dataType == DataType.INTEGER) {
             writer.writeToFile(Sort.getDescSortNumbersArray(reader.getNumbersArrayFromFile(inputFilesNames)));
-        } else if (sortMode == SortMode.ASCENDING && dataType == DataType.STRING) {
+        } else if (sortMode == SortMode.ASCENDING) {
             writer.writeToFile(Sort.getAscSortStringsArray(reader.getStringsFromFiles(inputFilesNames)));
-        } else if (sortMode == SortMode.DESCENDING && dataType == DataType.STRING) {
-            writer.writeToFile(Sort.getDescSortStringsArray(reader.getStringsFromFiles(inputFilesNames)));
         } else {
-            throw new IOException("Некорректно введены параметры");
+            writer.writeToFile(Sort.getDescSortStringsArray(reader.getStringsFromFiles(inputFilesNames)));
         }
     }
 }
