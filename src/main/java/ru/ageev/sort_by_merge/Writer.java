@@ -13,7 +13,6 @@ public class Writer {
         fileOutputStream = new FileOutputStream(outputFile, false);
     }
 
-
     public void writeToFile(String[] strings) throws IOException {
         for (String line : strings) {
             line = line + System.lineSeparator();

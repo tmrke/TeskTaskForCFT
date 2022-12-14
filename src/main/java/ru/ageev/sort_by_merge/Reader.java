@@ -33,7 +33,6 @@ public class Reader {
         return filesStrings.toArray(new String[0]);
     }
 
-
     public int[] getNumbersArrayFromFile(String... fileNames) {
         ArrayList<Integer> filesNumbers = new ArrayList<>();
         String path;

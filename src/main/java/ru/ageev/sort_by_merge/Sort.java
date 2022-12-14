@@ -3,7 +3,7 @@ package ru.ageev.sort_by_merge;
 import java.util.Arrays;
 
 public class Sort {
-    private static boolean isNumbersArraySort(int[] array) {             //проверка, что массив отсортирован по возрастанию
+    private static boolean isNumbersArraySort(int[] array) {             //проверка, что массив отсортирован по возрастанию. Оставил Warning, в угоду тому, что бы не использовать отрицание в названии функции
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
                 return false;
