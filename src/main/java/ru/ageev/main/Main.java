@@ -11,6 +11,6 @@ public class Main {
         System.out.println("Hello CFT!");
         System.out.println(Arrays.toString(args));
 
-        // "-s "out.txt "in4.txt "in5.txt "in6.txt"
+        // -s out.txt in4.txt in5.txt in6.txt
     }
 }
