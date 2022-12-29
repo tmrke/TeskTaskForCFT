@@ -25,8 +25,8 @@ public class Reader {
                         filesStrings.add(currentString);
                     }
                 }
-            } catch (FileNotFoundException ex) {
-                System.out.println(ex.getMessage());
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
             }
         }
 
@@ -53,8 +53,8 @@ public class Reader {
                         }
                     }
                 }
-            } catch (FileNotFoundException ex) {
-                System.out.println(ex.getMessage());
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
             }
         }
 
