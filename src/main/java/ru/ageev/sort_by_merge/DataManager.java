@@ -18,7 +18,7 @@ public class DataManager {
                 } else if (parameters[0].equals("-s")) {
                     dataType = DataType.STRING;
                 } else {
-                    System.out.println("Неккоректный аргумент для типа данных, по умолчанию будет использоваться \"-i\"");
+                    System.out.println("Некорректный аргумент для типа данных, по умолчанию будет использоваться \"-i\"");
                     dataType = DataType.INTEGER;
                 }
 
@@ -40,8 +40,8 @@ public class DataManager {
                     sortMode = SortMode.DESCENDING;
                     dataType = DataType.STRING;
                 } else {
-                    System.out.println("Неккоректный аргумент для типа данных, по умолчанию будет использоваться \"-i\"");
-                    System.out.println("Неккоректный аргумент для варианта сортировки, по умолчанию будет использоваться \"-a\"");
+                    System.out.println("Некорректный аргумент для типа данных, по умолчанию будет использоваться \"-i\"");
+                    System.out.println("Некорректный аргумент для варианта сортировки, по умолчанию будет использоваться \"-a\"");
                     sortMode = SortMode.ASCENDING;
                     dataType = DataType.INTEGER;
                 }
@@ -63,10 +63,10 @@ public class DataManager {
             } else {
                 writer.writeToFile(Sort.getDescSortStringsArray(reader.getStringsFromFiles(inputFilesNames)));
             }
-        } catch (ArrayIndexOutOfBoundsException ex) {
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Для корректного запуска программы нужно указать минимум 2 аргумента: имена исходного и результирующего файлов");
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
