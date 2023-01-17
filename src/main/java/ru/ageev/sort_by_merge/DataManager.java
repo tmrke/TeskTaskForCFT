@@ -8,7 +8,7 @@ public class DataManager {
             SortMode sortMode;
             DataType dataType;
             String outputFileName;
-            String[] inputFilesNames;
+            String[] inputFileNames;
 
             if (parameters[1].contains("txt")) {
                 sortMode = SortMode.ASCENDING;
@@ -23,9 +23,9 @@ public class DataManager {
                 }
 
                 outputFileName = parameters[1];
-                inputFilesNames = new String[parameters.length - 2];
+                inputFileNames = new String[parameters.length - 2];
 
-                System.arraycopy(parameters, 2, inputFilesNames, 0, inputFilesNames.length);
+                System.arraycopy(parameters, 2, inputFileNames, 0, inputFileNames.length);
             } else {
                 if (parameters[0].equals("-a") && parameters[1].equals("-i") || parameters[1].equals("-a") && parameters[0].equals("-i")) {
                     sortMode = SortMode.ASCENDING;
@@ -47,21 +47,21 @@ public class DataManager {
                 }
 
                 outputFileName = parameters[2];
-                inputFilesNames = new String[parameters.length - 3];
-                System.arraycopy(parameters, 3, inputFilesNames, 0, inputFilesNames.length);
+                inputFileNames = new String[parameters.length - 3];
+                System.arraycopy(parameters, 3, inputFileNames, 0, inputFileNames.length);
             }
 
             Reader reader = new Reader();
             Writer writer = new Writer(outputFileName);
 
             if (sortMode == SortMode.ASCENDING && dataType == DataType.INTEGER) {
-                writer.writeToFile(Sort.getAscSortNumbersArray(reader.getNumbersArrayFromFile(inputFilesNames)));
+                writer.writeToFile(Sort.getAscSortNumbersArray(reader.getNumbersArrayFromFile(inputFileNames)));
             } else if (sortMode == SortMode.DESCENDING && dataType == DataType.INTEGER) {
-                writer.writeToFile(Sort.getDescSortNumbersArray(reader.getNumbersArrayFromFile(inputFilesNames)));
+                writer.writeToFile(Sort.getDescSortNumbersArray(reader.getNumbersArrayFromFile(inputFileNames)));
             } else if (sortMode == SortMode.ASCENDING) {
-                writer.writeToFile(Sort.getAscSortStringsArray(reader.getStringsFromFiles(inputFilesNames)));
+                writer.writeToFile(Sort.getAscSortStringsArray(reader.getStringsFromFiles(inputFileNames)));
             } else {
-                writer.writeToFile(Sort.getDescSortStringsArray(reader.getStringsFromFiles(inputFilesNames)));
+                writer.writeToFile(Sort.getDescSortStringsArray(reader.getStringsFromFiles(inputFileNames)));
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Для корректного запуска программы нужно указать минимум 2 аргумента: имена исходного и результирующего файлов");

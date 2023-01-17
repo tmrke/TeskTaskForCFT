@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Sort {
     private static boolean isNumbersArraySort(int[] array) {             //проверка, что массив отсортирован по возрастанию. Оставил Warning, в угоду тому, что бы не использовать отрицание в названии функции
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i <= array.length; i++) {
             if (array[i] > array[i + 1]) {
                 return false;
             }
@@ -14,7 +14,7 @@ public class Sort {
     }
 
     private static boolean isStringsArraySort(String[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
+        for (int i = 0; i <= array.length; i++) {
             if (array[i].compareTo(array[i + 1]) > 0) {
                 return false;
             }
@@ -24,7 +24,8 @@ public class Sort {
     }
 
     public static int[] getAscSortNumbersArray(int[] inputArray) {
-        int i = 0, j = 0;
+        int i = 0;
+        int j = 0;
 
         int[] subArray1 = Arrays.copyOfRange(inputArray, 0, inputArray.length / 2);
         int[] subArray2 = Arrays.copyOfRange(inputArray, inputArray.length / 2, inputArray.length);
@@ -40,16 +41,16 @@ public class Sort {
         }
 
         for (int k = 0; k < array.length; k++) {
-            if (i > subArray1.length - 1) {
+            if (i >= subArray1.length) {
                 array[k] = subArray2[j];
                 j++;
-            } else if (j > subArray2.length - 1) {
+            } else if (j >= subArray2.length) {
                 array[k] = subArray1[i];
                 i++;
             } else if (subArray1[i] < subArray2[j]) {
                 array[k] = subArray1[i];
                 i++;
-            } else if (subArray1[i] >= subArray2[j]) {
+            } else {
                 array[k] = subArray2[j];
                 j++;
             }
@@ -75,16 +76,16 @@ public class Sort {
         }
 
         for (int k = array.length - 1; k >= 0; k--) {
-            if (i > subArray1.length - 1) {
+            if (i >= subArray1.length) {
                 array[k] = subArray2[j];
                 j++;
-            } else if (j > subArray2.length - 1) {
+            } else if (j >= subArray2.length) {
                 array[k] = subArray1[i];
                 i++;
             } else if (subArray1[i] < subArray2[j]) {
                 array[k] = subArray1[i];
                 i++;
-            } else if (subArray1[i] >= subArray2[j]) {
+            } else {
                 array[k] = subArray2[j];
                 j++;
             }
@@ -110,16 +111,16 @@ public class Sort {
         }
 
         for (int k = 0; k < array.length; k++) {
-            if (i > subArray1.length - 1) {
+            if (i >= subArray1.length) {
                 array[k] = subArray2[j];
                 j++;
-            } else if (j > subArray2.length - 1) {
+            } else if (j >= subArray2.length) {
                 array[k] = subArray1[i];
                 i++;
             } else if (subArray1[i].compareTo(subArray2[j]) < 0) {
                 array[k] = subArray1[i];
                 i++;
-            } else if (subArray1[i].compareTo(subArray2[j]) >= 0) {
+            } else {
                 array[k] = subArray2[j];
                 j++;
             }
@@ -145,16 +146,16 @@ public class Sort {
         }
 
         for (int k = array.length - 1; k >= 0; k--) {
-            if (i > subArray1.length - 1) {
+            if (i >= subArray1.length) {
                 array[k] = subArray2[j];
                 j++;
-            } else if (j > subArray2.length - 1) {
+            } else if (j >= subArray2.length) {
                 array[k] = subArray1[i];
                 i++;
             } else if (subArray1[i].compareTo(subArray2[j]) < 0) {
                 array[k] = subArray1[i];
                 i++;
-            } else if (subArray1[i].compareTo(subArray2[j]) >= 0) {
+            } else {
                 array[k] = subArray2[j];
                 j++;
             }

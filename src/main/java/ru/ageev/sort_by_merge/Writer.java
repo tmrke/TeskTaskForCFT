@@ -13,8 +13,8 @@ public class Writer {
         fileOutputStream = new FileOutputStream(outputFile, false);
     }
 
-    public void writeToFile(String[] strings) throws IOException {
-        for (String line : strings) {
+    public void writeToFile(String[] lines) throws IOException {
+        for (String line : lines) {
             line = line + System.lineSeparator();
             fileOutputStream.write(line.getBytes(StandardCharsets.UTF_8));
         }

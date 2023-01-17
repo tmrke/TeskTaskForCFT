@@ -9,20 +9,19 @@ public class Reader {
     private final String pathWithoutName = "src/main/resources/";
 
     public String[] getStringsFromFiles(String... fileNames) {
-        ArrayList<String> filesStrings = new ArrayList<>();
-        String path;
+        ArrayList<String> fileStrings = new ArrayList<>();
 
         for (String name : fileNames) {
-            path = pathWithoutName + name;
-
             try {
+                String path = pathWithoutName + name;
+
                 Scanner scanner = new Scanner(new FileInputStream(path));
 
                 while (scanner.hasNext()) {
                     String currentString = scanner.nextLine();
 
                     if (!currentString.contains(" ")) {
-                        filesStrings.add(currentString);
+                        fileStrings.add(currentString);
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -30,11 +29,11 @@ public class Reader {
             }
         }
 
-        return filesStrings.toArray(new String[0]);
+        return fileStrings.toArray(new String[0]);
     }
 
     public int[] getNumbersArrayFromFile(String... fileNames) {
-        ArrayList<Integer> filesNumbers = new ArrayList<>();
+        ArrayList<Integer> fileNumbers = new ArrayList<>();
         String path;
 
         for (String name : fileNames) {
@@ -48,7 +47,7 @@ public class Reader {
 
                     if (!currentString.contains(" ")) {
                         try {
-                            filesNumbers.add(Integer.valueOf(currentString));
+                            fileNumbers.add(Integer.valueOf(currentString));
                         } catch (NumberFormatException ignored) {
                         }
                     }
@@ -58,6 +57,6 @@ public class Reader {
             }
         }
 
-        return filesNumbers.stream().mapToInt(i -> i).toArray();
+        return fileNumbers.stream().mapToInt(i -> i).toArray();
     }
 }
